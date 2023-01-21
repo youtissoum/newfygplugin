@@ -5,3 +5,8 @@ api-version: 1.19
 authors: [ youtissoum ]
 description: A plugin for the fyg cafe minecraft server
 website: https://github.com/youtissoum/newfygplugin
+commands:
+  updatefygplugin:
+    description: Update the plugin
+    permission: fygplugin.update
+    permission-message: You do not have permissions to update the plugin
