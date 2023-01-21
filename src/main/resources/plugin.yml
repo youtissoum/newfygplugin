@@ -1,0 +1,7 @@
+name: Fygplugin
+version: '${project.version}'
+main: com.fygcafe.fygplugin.Fygplugin
+api-version: 1.19
+authors: [ youtissoum ]
+description: A plugin for the fyg cafe minecraft server
+website: https://github.com/youtissoum/newfygplugin
