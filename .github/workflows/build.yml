@@ -28,10 +28,10 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Change the build file's name to not have to change it in the updater
-      run: mv target/fygplugin-*.jar target/server.jar
+      run: mv target/fygplugin-*.jar target/fygplugin.jar
     - name: Save build result
       uses: actions/upload-artifact@v3
       with:
         name: fygplugin
         path: |
-          target/server.jar
+          target/fygplugin.jar
