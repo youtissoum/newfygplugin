@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -38,10 +39,16 @@ public class Updater {
         this.AUTHOR = AUTHOR;
         this.REPOSITORY = REPOSITORY;
         this.ARTIFACT = ARTIFACT;
-        this.authorization = authorization;
+        this.authorization = Objects.requireNonNullElse(authorization, "");
+
     }
 
     public void update() {
+        if(authorization == null || authorization.equalsIgnoreCase("")) {
+            plugin.getLogger().severe("no GitHub authorization token given, cannot update");
+            return;
+        }
+
         final File folder = this.updateFolder;
 
         deleteOldFiles();
@@ -100,7 +107,6 @@ public class Updater {
         ZipEntry entry;
         try {
             while ((entry = zipFile.getNextEntry()) != null) {
-                plugin.getLogger().info(entry.getName());
                 if(entry.getName().equals(file.getName())) {
                     FileOutputStream fout = new FileOutputStream(new File(this.updateFolder, file.getName()));
 
