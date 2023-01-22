@@ -16,8 +16,6 @@ public final class Fygplugin extends JavaPlugin {
 
         getCommand("updatefygplugin").setExecutor(new UpdateCommand(updater));
         getLogger().info("Plugin started !");
-
-        getLogger().info(this.getFile().getName());
     }
 
     @Override
