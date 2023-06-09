@@ -12,9 +12,9 @@ public final class Fygplugin extends JavaPlugin {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
 
-        Updater updater = new Updater(this, this.getFile(), "youtissoum", "newfygplugin", "fygplugin", getConfig().getString("updater_token"));
+        Updater updater = new Updater(this, this.getFile(), "youtissoum", "newfygplugin", "fygplugin");
 
-        getCommand("updatefygplugin").setExecutor(new UpdateCommand(updater));
+        getCommand("updatefygplugin").setExecutor(new UpdateCommand(this, updater));
         getLogger().info("Plugin started !");
     }
 
