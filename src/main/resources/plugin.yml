@@ -10,3 +10,7 @@ commands:
     description: Update the plugin
     permission: fygplugin.update
     permission-message: You do not have permissions to update the plugin
+  tickedrestart:
+    description: restarts the server after a timer
+    permission: bukkit.command.restart
+    permission-message: You do not have permission to restart the server (don't try it L noob XD)

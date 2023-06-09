@@ -1,5 +1,6 @@
 package com.fygcafe.fygplugin;
 
+import com.fygcafe.fygplugin.commands.TickedRestartCommand;
 import com.fygcafe.fygplugin.commands.UpdateCommand;
 import me.youtissoum.Updater;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -15,6 +16,7 @@ public final class Fygplugin extends JavaPlugin {
         Updater updater = new Updater(this, this.getFile(), "youtissoum", "newfygplugin", "fygplugin");
 
         getCommand("updatefygplugin").setExecutor(new UpdateCommand(this, updater));
+        getCommand("tickedrestart").setExecutor(new TickedRestartCommand(this));
         getLogger().info("Plugin started !");
     }
 
